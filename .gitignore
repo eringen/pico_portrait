@@ -1,0 +1,8 @@
+# Local credentials: never commit these or compiled firmware containing them.
+/config.py
+/firmware/config.local.h
+/build*/
+/.deps/
+__pycache__/
+*.pyc
+.DS_Store
