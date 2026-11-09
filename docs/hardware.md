@@ -19,6 +19,14 @@ controller/geometry is still unknown. Do not assume success from ACK alone.
 Do not pull SDA/SCL up to 5 V. OLED height defaults to 32 and can be set to 64
 only if evidence supports that geometry.
 
+## Debug adapter available
+
+The spare board is the Motorobit RP2040-Zero, identified by product link.
+Use the [RP2040-Zero debugprobe procedure](spare-pico-debug.md). The official
+Pico image is a compatibility-test candidate; serial/SWD operation is not tested.
+The user also reports having a multimeter, 5 V supply and USB adapter/cable;
+exact supply model/rating and wiring measurements remain pending.
+
 ## Proposed external host bench power (not yet built or verified)
 
 The Pico W datasheet sections 3.4/3.5 (PDF pages 15-16 in the downloaded revision)

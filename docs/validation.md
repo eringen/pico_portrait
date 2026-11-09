@@ -8,7 +8,13 @@ applicable AGENTS.md present. `config.py` and LICENSE were not modified. Origina
 README instructions are retained in `docs/stage1.md`; `main.py` gained a real
 border display test and a conventional main guard.
 
-The user explicitly reported **nothing has been physically tested yet**.
+Initially no physical testing had been performed. After following the guided
+MicroPython stage 1 procedure, the user reported **“all good”**. Record the OLED
+border/four-row rendering and Wi-Fi/HTTP checks as passed by user report. No scan
+output or JSON capture was supplied, so the exact I²C address is still unrecorded.
+Successful rendering supports the current SSD1306-compatible 128x32 settings;
+it does not independently identify the controller silicon. This report applies
+to MicroPython only, not the C firmware, USB host, UART/SWD or VBUS wiring.
 
 ## Software checks
 
@@ -84,9 +90,11 @@ without reboot requires a USB-enabled picotool; SWD is the preferred route.
 
 | Observation | Status |
 |---|---|
-| OLED ACK address, panel geometry/controller, border/four rows | Not tested |
-| Real Wi-Fi join, DHCP IP and HTTP | Not tested |
-| UART/SWD on the actual Pico | Not tested |
+| MicroPython OLED border/four rows at configured 128x32 | Passed by user report |
+| Exact OLED ACK address and controller identity | Address capture pending; controller silicon not independently identified |
+| MicroPython Wi-Fi join, DHCP and HTTP | Passed by user report; JSON capture pending |
+| C firmware OLED/Wi-Fi and HTTP | Compiled only; not hardware tested |
+| UART/SWD on the actual Pico | RP2040-Zero identified; official debugprobe image hash checked; loopback/SWD pending |
 | External host VBUS circuit and backfeed protection | Proposed, not selected/built/measured |
 | Actual Portrait VID/PID, interfaces, endpoints and reconnect | Not tested |
 | Portrait status queries/replies | Not implemented; need descriptor evidence first |
@@ -94,7 +102,8 @@ without reboot requires a USB-enabled picotool; SWD is the preferred route.
 | SVG submission/settings and desktop job API | Not implemented |
 | Internal rails, current allowance, AMS1117 suitability | Unknown; no internal wiring authorized by evidence |
 
-Follow [stage1.md](stage1.md) next with computer USB power and Portrait
-disconnected. Proceed to [hardware.md](hardware.md) before any USB-host device
+Stage 1 is reported passed; retain its JSON/scan results when available. Keep
+the Portrait disconnected and proceed to the power/debugging inventory and
+measurement gate in [hardware.md](hardware.md) before any USB-host device
 connection. These gates are hardware dependencies, not requests to approve
 uncompleted software work.

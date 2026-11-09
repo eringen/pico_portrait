@@ -3,9 +3,11 @@
 An incremental Wi-Fi adapter for the **original Silhouette Portrait**, retaining
 its original USB controller and motor drivers. No motor-driver traces are modified.
 
-**Current milestone: compiled no-motion diagnostic, not hardware validated.**
-The user has not yet run the OLED/Wi-Fi starter. Plotter status queries, command
-buffering, pen plotting, SVG submission and settings are not implemented or enabled.
+**Current milestone: MicroPython OLED/Wi-Fi test passed by user report; C USB-host
+diagnostic compiled but not hardware validated.** The user reported “all good”
+after the guided border/four-row and Wi-Fi/HTTP test. Exact I²C address and JSON
+capture have not yet been supplied. Plotter status queries, command buffering,
+pen plotting, SVG submission and settings are not implemented or enabled.
 
 ## Start here
 
